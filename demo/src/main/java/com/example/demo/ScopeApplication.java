@@ -7,13 +7,16 @@ import org.springframework.context.ApplicationContext;
 import com.example.demo.basic.BinarySearchImpl;
 
 @SpringBootApplication
-public class DemoApplication {
+public class ScopeApplication {
 
 	public static void main(String[] args) {
 		//BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgo());
 		
-		ApplicationContext Appcontext= SpringApplication.run(DemoApplication.class, args);
-		BinarySearchImpl binarySearch = Appcontext.getBean(BinarySearchImpl.class);
+		ApplicationContext Appcontext1= SpringApplication.run(ScopeApplication.class, args);
+		ApplicationContext Appcontext2= SpringApplication.run(ScopeApplication.class, args);
+		System.out.println(Appcontext1);
+		System.out.println(Appcontext2);
+		BinarySearchImpl binarySearch = Appcontext1.getBean(BinarySearchImpl.class);
 		int result =binarySearch.binarySearch(new int[] {1, 3, 5,13,15} , 13);
 	}
 }
