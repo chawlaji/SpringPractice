@@ -4,7 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.example.demo.basic.BinarySearchImpl;
+import com.example.demo.basics5.basic.BinarySearchImpl;
+
+
 
 @SpringBootApplication
 public class BasicApplication {

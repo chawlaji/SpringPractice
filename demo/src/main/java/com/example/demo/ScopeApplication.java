@@ -1,22 +1,32 @@
 package com.example.demo;
 
+
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.example.demo.basic.BinarySearchImpl;
+import com.example.demo.basics5.scope.PersonDao;
+
 
 @SpringBootApplication
 public class ScopeApplication {
+	private static Logger LOGGER=LoggerFactory.getLogger(ScopeApplication.class);
 
 	public static void main(String[] args) {
 		//BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgo());
 		
-		ApplicationContext Appcontext1= SpringApplication.run(ScopeApplication.class, args);
-		ApplicationContext Appcontext2= SpringApplication.run(ScopeApplication.class, args);
-		System.out.println(Appcontext1);
-		System.out.println(Appcontext2);
-		BinarySearchImpl binarySearch = Appcontext1.getBean(BinarySearchImpl.class);
-		int result =binarySearch.binarySearch(new int[] {1, 3, 5,13,15} , 13);
+		ApplicationContext appcontext= SpringApplication.run(ScopeApplication.class, args);
+		PersonDao personDao1 = appcontext.getBean(PersonDao.class);
+		PersonDao personDao2 = appcontext.getBean(PersonDao.class);
+		
+		LOGGER.info("{}", personDao1);
+		LOGGER.info("{}", personDao1.getJdbcconnection());
+		LOGGER.info("{}", personDao2);
+		LOGGER.info("{}", personDao2.getJdbcconnection());
+		
 	}
 }

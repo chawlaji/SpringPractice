@@ -1,4 +1,4 @@
-package com.example.demo.basic;
+package com.example.demo.basics5.basic;
 
 public interface SortAlgo {
 
