@@ -1,21 +1,33 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 
 import com.example.demo.basics5.basic.BinarySearchImpl;
 
 
 
 @SpringBootApplication
-public class BasicApplication {
+public class BasicApplication implements CommandLineRunner{
+	@Autowired 
+	BinarySearchImpl binarySearch;
 
 	public static void main(String[] args) {
-		//BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgo());
 		
-		ApplicationContext Appcontext= SpringApplication.run(BasicApplication.class, args);
-		BinarySearchImpl binarySearch = Appcontext.getBean(BinarySearchImpl.class);
-		int result =binarySearch.binarySearch(new int[] {1, 3, 5,13,15} , 13);
+		SpringApplication.run(BasicApplication.class, args);
+		 //without
+		//ApplicationContext Appcontext= SpringApplication.run(BasicApplication.class, args);
+		//BinarySearchImpl binarySearch = Appcontext.getBean(BinarySearchImpl.class);
+		//int result =binarySearch.binarySearch(new int[] {5, 33, 6,17,15} , 13);
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		int result =binarySearch.binarySearch(new int[] {5, 33, 6,17,15} , 6);
+		
 	}
 }

@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.example.demo.PropertiesApplication",
+      "name": "classpath:app.yml",
+      "type": "com.example.demo.PropertiesApplication"
+    }
+  ],
+  "properties": [
+    {
+      "name": "external.service.url",
+      "description": "A description for 'external.service.url'",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "external.serviceurl",
+      "description": "A description for 'external.serviceurl'",
+      "type": "java.lang.String"
+    }
+  ]
+}

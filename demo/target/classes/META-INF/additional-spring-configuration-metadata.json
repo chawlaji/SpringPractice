@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "external.service.url",
+    "type": "java.lang.String",
+    "description": "A description for 'external.service.url'"
+  },
+  {
+    "name": "external.serviceurl",
+    "type": "java.lang.String",
+    "description": "A description for 'external.serviceurl'"
+  }
+]}
